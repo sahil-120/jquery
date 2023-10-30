@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>this is paragreaph</p>
+    <p>this is paragreaph</p>
+    <p>this is paragreaph</p>
+    <p>this is paragreaph</p>
+    <p class="red">this is paragreaph</p>
+    <p>this is paragreaph</p>
+    <h1 class="sa">dbfajklfask</h1>
+    <ul>
+        <li>click</li>
+        <li>keypress</li>
+        <li>submit</li>
+        <li>load</li>
+        <li>dblclick</li>
+        <li>keydown</li>
+        <li>change</li>
+        <li>resize</li>
+        <li>mouseenter</li>
+        <li>keyup</li>
+        <li>focus</li>
+        <li>scroll</li>
+        <li>mouseleave</li>
+        <li>blur</li>
+        <li>unload</li>
+    </ul>
+    <div id="flip">Click to slide the panel down or up</div>
+    <div id="panel">Hello world!</div>
+
+    <div class="menu-open">
+        +
+    </div>
+    <div class="menu-close">
+        -
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("p").click(function () {
+            $(this).removeClass("bi")
+            $(this).toggleClass("bi")
+        })
+        $(".sa").mouseenter(function () {
+            $(".red").toggleClass("sahil")
+        });
+        $(".sa").mouseleave(function () {
+            $(".red").removeClass("sahil");
+        });
+        $("menu-open").on(function () {
+            alert('hello')
+        })
+        $(".red").click(function () {
+            console.log($(this))
+        })
+        $("p").click(function () {
+            $(this).hide("slow");
+        });
+        $("#flip").click(function () {
+            $("#panel").slideToggle("slow");
+        })
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#p1").css("color", "red").slideUp(2000).hide(5000);
+            });
+        });
+    });
+</script>
+
+</html>
